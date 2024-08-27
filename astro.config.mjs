@@ -16,6 +16,17 @@ const astroExpressiveCodeOptions = {
   themes: ["min-dark", "min-light"]
 };
 
+let Resvg = null;
+
+export async function loadResvg() {
+  if (typeof window !== 'undefined' && !Resvg) {
+    const module = await import('@resvg/resvg-js');
+    Resvg = module.Resvg;
+  }
+  return Resvg;
+}
+
+
 // https://astro.build/config
 export default defineConfig({
   markdown: {
