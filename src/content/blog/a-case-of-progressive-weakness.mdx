@@ -9,6 +9,8 @@ heroImage: "https://img.penrith.education/heros/weakness.jpg"
 ---
 
 import Callout from '@components/MDX/Callout.astro'
+import { Image } from 'astro:assets';
+
 
 This case study analyses a case of progressive weakness in a 25 year old male. The initial call was a 2B - sick person. The caller statement was: "Son is sick". No further information was provided. The caller was NESB so information was limited. It was a particularly busy day and the patient had been waiting roughly 5 hours for an ambulance to arrive. 
 
@@ -46,7 +48,8 @@ He has a PmHx of Asthma which he takes Ventolin for. Denies Allergies.
 
 **ECG**
 
-![Weakness ECG](https://img.penrith.education/content/weaknessECG.jpeg)
+<Image src="https://img.penrith.education/content/weaknessECG.jpeg" alt="weaknessECG.jpeg" width="1200" height="630" />
+
 
 
 The ECG is poor quality as I forgot to scan it at the time, although it paints a picture of the underlying diagnosis.
