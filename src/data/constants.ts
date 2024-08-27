@@ -4,7 +4,7 @@ export const defaultMeta = {
   title: "Penrith Education",
   description: "A collaborative hub for all things education.",
   ogImage: {
-    src: "/public/static/bannerPenrith.png",
+    src: "~/assets/heros/heroPenrith.jpg",
     alt: "Penrith education",
   },
 };
