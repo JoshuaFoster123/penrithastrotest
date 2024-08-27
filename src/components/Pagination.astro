@@ -1,13 +1,17 @@
 ---
 import { getCollection } from "astro:content";
-import { basename } from "node:path";
+// import { basename } from "node:path";
+
+function getBasename(path: string): string {
+  return path.split('/').filter(Boolean).pop() || '';
+}
 
 const posts = (await getCollection("blog")).sort(
   (a, b) => a.data.pubDate.valueOf() - b.data.pubDate.valueOf()
 );
 
 const currentIndex = posts.findIndex((post) => {
-  return basename(Astro.url.pathname) === post.slug;
+  return getBasename(Astro.url.pathname) === post.slug;
 });
 
 const nextPost = posts[currentIndex + 1];
