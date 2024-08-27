@@ -38,6 +38,7 @@
     "satori-html": "^0.3.2"
   },
   "dependencies": {
+    "@astrojs/cloudflare": "^11.0.4",
     "@astrojs/react": "^3.6.2",
     "@types/react": "^18.3.4",
     "@types/react-dom": "^18.3.0",
