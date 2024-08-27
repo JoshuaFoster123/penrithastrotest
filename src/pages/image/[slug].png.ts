@@ -1,6 +1,5 @@
 import satori from "satori";
 import { html } from "satori-html";
-
 import InterRegular from "@fontsource/inter/files/inter-latin-400-normal.woff";
 import InterBold from "@fontsource/inter/files/inter-latin-700-normal.woff";
 import { getCollection } from "astro:content";
