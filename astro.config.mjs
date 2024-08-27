@@ -9,7 +9,7 @@ import rehypeSlug from "rehype-slug";
 import rehypeAutolinkHeadings from "rehype-autolink-headings";
 import { remarkReadingTime } from "./remark-reading-time.mjs";
 import react from "@astrojs/react";
-
+import { passthroughImageService } from 'astro/config';
 /** @type {import('astro-expressive-code').AstroExpressiveCodeOptions} */
 import cloudflare from "@astrojs/cloudflare";
 const astroExpressiveCodeOptions = {
@@ -40,9 +40,7 @@ export default defineConfig({
     CSS: false,
     SVG: false
   }), tailwind(), sitemap(), expressiveCode(astroExpressiveCodeOptions), icon(), mdx(), react()],
-  image: {
-    service: sharpImageService()
-  },
+  
   site: "https://astrozinc.exylons.com",
   vite: {
     plugins: [rawFonts([".ttf", ".woff"])],
@@ -62,7 +60,10 @@ export default defineConfig({
   adapter: cloudflare({
     mode: "directory",
     functionPerRoute: true
-  })
+  }),
+  image: {
+    service: passthroughImageService(),
+  },
 });
 
 // vite plugin to import fonts
