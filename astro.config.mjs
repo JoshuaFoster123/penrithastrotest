@@ -41,7 +41,7 @@ export default defineConfig({
     SVG: false
   }), tailwind(), sitemap(), expressiveCode(astroExpressiveCodeOptions), icon(), mdx(), react()],
   
-  site: "https://img.penrith.education",
+  site: "https://penrith.education",
   vite: {
     plugins: [rawFonts([".ttf", ".woff"])],
     optimizeDeps: {
