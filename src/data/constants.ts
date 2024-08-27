@@ -2,10 +2,10 @@ export const author = "Lance Ross";
 
 export const defaultMeta = {
   title: "Penrith Education",
-  description: "A free and open resource for education.",
+  description: "A collaborative hub for all things education.",
   ogImage: {
-    src: "/static/banner.png",
-    alt: "Astro Zinc with Astro Logo",
+    src: "/static/bannerPenrith.png",
+    alt: "Penrith education",
   },
 };
 
