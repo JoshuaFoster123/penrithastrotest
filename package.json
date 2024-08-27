@@ -5,7 +5,7 @@
   "scripts": {
     "dev": "astro dev",
     "start": "astro dev",
-    "build": "astro build",
+    "build": "pnpm add sharp && astro build",
     "format": "prettier --write . --plugin=prettier-plugin-astro",
     "preview": "astro preview",
     "lint": "eslint . --max-warnings 0 --report-unused-disable-directives"

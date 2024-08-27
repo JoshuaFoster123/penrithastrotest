@@ -48,10 +48,21 @@ export default defineConfig({
     plugins: [rawFonts([".ttf", ".woff"])],
     optimizeDeps: {
       exclude: ["@resvg/resvg-js"]
+    },
+    ssr: {
+      noExternal: ["@resvg/resvg-js"]
+    },
+    build: {
+      rollupOptions: {
+        external: ["@resvg/resvg-js"]
+      }
     }
   },
   output: "server",
-  adapter: cloudflare()
+  adapter: cloudflare({
+    mode: "directory",
+    functionPerRoute: true
+  })
 });
 
 // vite plugin to import fonts
