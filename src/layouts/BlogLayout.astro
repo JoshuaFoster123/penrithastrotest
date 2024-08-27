@@ -17,17 +17,19 @@ interface Props {
   url: string;
   updatedDate: Date | undefined;
   readingTime: string;
+  heroImage: string;
 }
 
 const {
   title,
   description,
-  image,
+  // image,
   imageAlt,
   pubDate,
   // url,
   updatedDate,
   readingTime,
+  heroImage,
 } = Astro.props;
 
 // const ogImage = {
@@ -51,7 +53,7 @@ const fullUpdatedDate = updatedDate?.toLocaleDateString("en", {
 <Layout
   title={title}
   description={description}
-  heroImage={image.src}
+  heroImage={heroImage}
   pubDate={updatedDate ?? pubDate}
 >
   <header class="flex flex-col mb-8">
@@ -95,7 +97,7 @@ const fullUpdatedDate = updatedDate?.toLocaleDateString("en", {
 
     <!-- Hero image -->
     <Image
-      src={image}
+      src={heroImage}
       alt={imageAlt}
       loading="eager"
       class="rounded-lg"

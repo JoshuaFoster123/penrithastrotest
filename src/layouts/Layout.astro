@@ -14,10 +14,10 @@ interface Props {
   title?: string;
   description?: string;
   heroImage?: string;
-  // ogImage?: {
-  //   src: string;
-  //   alt: string;
-  // };
+  ogImage?: {
+    src: string;
+    alt: string;
+  };
   pubDate?: Date;
   wide?: boolean;
 }
@@ -38,7 +38,7 @@ const ogImageURL = heroImage
   const ogImageAlt = heroImage 
   ? `Hero image for ${title}` 
   : defaultMeta.ogImage.alt;
-// const ogImageURL = new URL(ogImage.src, Astro.site).href;
+// const ogImageURL = ogImage.src;
 const canonicalURL = new URL(Astro.url).href;
 ---
 

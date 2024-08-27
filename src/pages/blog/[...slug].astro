@@ -26,6 +26,7 @@ const { Content, remarkPluginFrontmatter } = await post.render();
   url={post.slug}
   updatedDate={frontmatter.updatedDate}
   readingTime={remarkPluginFrontmatter.minutesRead}
+  heroImage={frontmatter.heroImage}
 >
   <Content />
 </BlogLayout>

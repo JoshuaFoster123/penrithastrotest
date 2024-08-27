@@ -41,7 +41,7 @@ export default defineConfig({
     SVG: false
   }), tailwind(), sitemap(), expressiveCode(astroExpressiveCodeOptions), icon(), mdx(), react()],
   
-  site: "https://penrithastrotest.pages.dev/",
+  site: "https://img.penrith.education",
   vite: {
     plugins: [rawFonts([".ttf", ".woff"])],
     optimizeDeps: {
@@ -62,6 +62,7 @@ export default defineConfig({
     functionPerRoute: true
   }),
   image: {
+    remotePatterns: [{ protocol: "https" }],
     service: passthroughImageService(),
   },
 });
