@@ -2,6 +2,7 @@
 dist/
 .output/
 .astro/
+
 # dependencies
 node_modules/
 
@@ -10,7 +11,6 @@ npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 pnpm-debug.log*
-
 
 # environment variables
 .env
@@ -23,5 +23,31 @@ pnpm-debug.log*
 .netlify
 
 # obsidian
-.obsidian
+.obsidian/
 paste.txt
+
+# Vite
+.vite/
+
+# TypeScript
+*.tsbuildinfo
+
+# Editor directories and files
+.vscode/
+.idea/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+# Temporary files
+*.tmp
+*.temp
+
+# Cache directories
+.cache/
+.mf/
+
+# Cloudflare specific
+.cloudflare/
