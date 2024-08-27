@@ -41,7 +41,7 @@ export default defineConfig({
     SVG: false
   }), tailwind(), sitemap(), expressiveCode(astroExpressiveCodeOptions), icon(), mdx(), react()],
   
-  site: "https://astrozinc.exylons.com",
+  site: "https://penrithastrotest.pages.dev/",
   vite: {
     plugins: [rawFonts([".ttf", ".woff"])],
     optimizeDeps: {

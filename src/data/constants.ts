@@ -1,4 +1,4 @@
-export const author = "Lance Ross";
+export const author = "Joshua Foster";
 
 export const defaultMeta = {
   title: "Penrith Education",
