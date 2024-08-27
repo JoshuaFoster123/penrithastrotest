@@ -4,12 +4,11 @@ import Header from "@components/Header.astro";
 import { getCollection } from "astro:content";
 import Blog from "@components/Blog.astro";
 import { Image } from "astro:assets";
-
+import penrithHero from "../assets/heros/heroPenrith.jpg";
 const posts = (await getCollection("blog")).sort(
   (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf(),
 );
 
-const image = "/src/assets/heros/heroPenrith.jpg";
 const imageAlt = "Penrith Education";
 ---
 
@@ -27,7 +26,7 @@ const imageAlt = "Penrith Education";
   </section>
   
   <Image
-  src={image}
+  src={penrithHero}
   alt={imageAlt}
   loading="eager"
   class="rounded-lg mt-6" 
