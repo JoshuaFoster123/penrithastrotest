@@ -6,6 +6,8 @@ import InterBold from "@fontsource/inter/files/inter-latin-700-normal.woff";
 import { getCollection } from "astro:content";
 import type { APIContext } from "astro";
 
+export const prerender = true;
+
 const dimensions = {
   width: 1200,
   height: 630,

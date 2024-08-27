@@ -49,7 +49,12 @@ export default defineConfig({
     }
   },
   output: "server",
-  adapter: cloudflare()
+  adapter: cloudflare(),
+  vite: {
+    ssr: {
+      noExternal: ['@resvg/resvg-js']
+    }
+  }
 });
 
 // vite plugin to import fonts
