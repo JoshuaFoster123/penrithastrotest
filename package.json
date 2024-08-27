@@ -13,7 +13,6 @@
   "engines": {
     "node": ">=18.14.1"
   },
-
   "devDependencies": {
     "@astrojs/mdx": "^3.1.4",
     "@astrojs/rss": "^4.0.7",
@@ -48,7 +47,6 @@
     "fuse.js": "^7.0.0",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
-    "sharp": "^0.33.5",
     "tailwindcss": "^3.4.10"
   },
   "overrides": {
