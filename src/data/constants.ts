@@ -1,9 +1,8 @@
 export const author = "Lance Ross";
 
 export const defaultMeta = {
-  title: "AstroZinc",
-  description:
-    "An Astro blogging template made by @exylons using Astro, Tailwind, and MDX",
+  title: "Penrith Education",
+  description: "A free and open resource for education.",
   ogImage: {
     src: "/static/banner.png",
     alt: "Astro Zinc with Astro Logo",
@@ -20,7 +19,11 @@ export const navigation = [
     text: "Blog",
   },
   {
-    href: "/rss.xml",
-    text: "RSS",
-  },
+    href: "/ecg-library/",
+    text: "ECG Library"
+  }
+  // {
+  //   href: "/rss.xml",
+  //   text: "RSS",
+  // },
 ];

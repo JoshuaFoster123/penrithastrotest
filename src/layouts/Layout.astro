@@ -4,6 +4,9 @@ import { Icon } from "astro-icon/components";
 import { author, defaultMeta, navigation } from "@data/constants";
 import "@fontsource-variable/inter";
 import Callout from "@components/MDX/Callout.astro";
+import Social from "@components/Social.astro";
+import Email from "@components/Email.astro";
+
 
 const twitter = "exylods"; // Twitter username, even though it's privated.
 
@@ -121,12 +124,12 @@ const canonicalURL = new URL(Astro.url).href;
         class="mx-auto max-w-4xl px-6 lg:px-2 text-center text-xs lg:text-sm dark:text-zinc-400 text-zinc-600"
       >
         <p>
-          &copy; {new Date().getFullYear()}
-          {author}. All rights reserved. <span
-            ><a
-              href="https://github.com/exylons/astrozinc"
-              class="hover:underline z-10">Source Code.</a
-            ></span
+          Free and open access education. <br><span
+            >
+            <Social platform="Facebook" username="groups/350502002252540"/>
+            <Social platform="Github" username="JoshuaFoster123"/>
+            <Email email="sumbissions@penrith.education" />
+            </span
           >
         </p>
       </div>

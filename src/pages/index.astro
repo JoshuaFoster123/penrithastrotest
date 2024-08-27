@@ -2,52 +2,39 @@
 import Layout from "@layouts/Layout.astro";
 import Header from "@components/Header.astro";
 import { getCollection } from "astro:content";
-import Benefit from "@components/Benefit.astro";
 import Blog from "@components/Blog.astro";
+import { Image } from "astro:assets";
 
 const posts = (await getCollection("blog")).sort(
-  (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf()
+  (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf(),
 );
+
+const image = "/src/assets/heros/heroPenrith.jpg";
+const imageAlt = "Penrith Education";
 ---
+
 
 <Layout>
   <section class="text-center">
     <div class="grid place-items-center">
-      <Header title="AstroZinc" />
+      <Header title="Penrith Education" />
       <p class="mt-3 max-w-prose leading-relaxed">
-        A minimalist blogging astro template inspired with all the zinc colors
-        from Tailwind CSS. It also comes with many features that a blog website
-        needs.
+        A collaborative hub for all things education.<br />
+        <!-- By pre-hospital clinicians, for pre-hospital clinicians. -->
       </p>
     </div>
+   
   </section>
-  <section class="text-center mt-20">
-    <div>
-      <Header title="Why use this template instead?" />
-      <ul class="grid grid-cols-1 gap-4 place-items-center">
-        <Benefit
-          iconName="mdx"
-          title="Fully featured MDX"
-          description="Comes with many different MDX remark plugins to make your blog posts look great and more functional."
-        />
-        <Benefit
-          iconName="lighthouse"
-          title="100 Lighthouse Score"
-          description="With Astro, you get a 100 Lighthouse score out of the box. No need to worry about performance!"
-        />
-        <Benefit
-          iconName="biceps"
-          title="Flexible to use"
-          description="Just create an MDX file, add the metadata, and you're good to go writing your blog post!"
-        />
-        <Benefit
-          iconName="opensource"
-          title="Free and Open Source"
-          description="This template is free and open source. Feel free to contribute to the project on GitHub!"
-        />
-      </ul>
-    </div>
-  </section>
+  
+  <Image
+  src={image}
+  alt={imageAlt}
+  loading="eager"
+  class="rounded-lg mt-6" 
+  width={1200}
+  height={630}
+/>
+
   <section>
     <h2 class="mt-12 text-2xl font-semibold dark:text-zinc-100 text-zinc-900">
       Recent Posts
@@ -60,4 +47,20 @@ const posts = (await getCollection("blog")).sort(
       href="/blog/">View all posts &rarr;</a
     >
   </section>
+
+  <style>
+    .email-link {
+      color: inherit;
+      text-decoration: none;
+      border-bottom: 1px solid;
+      border-color: inherit;
+    }
+
+    .email-link:hover {
+      border-color: rgb(96, 206, 110);
+      color: rgb(96, 206, 110);
+      text-decoration: none;
+
+    }
+  </style>
 </Layout>

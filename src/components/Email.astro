@@ -1,0 +1,18 @@
+---
+const { email } = Astro.props;
+
+---
+
+<a href={`mailto:${email}`}>Email</a>
+
+<style>
+    a {
+        padding: 0.5rem 1rem;
+        /* color: white; */
+        text-decoration: none;
+    }
+    a:hover {
+        text-decoration: underline;
+        color: rgb(96, 206, 110);
+    }
+</style>
