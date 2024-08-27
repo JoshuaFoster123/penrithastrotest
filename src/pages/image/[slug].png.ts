@@ -1,6 +1,6 @@
 import satori from "satori";
 import { html } from "satori-html";
-import { Resvg } from "@resvg/resvg-js";
+
 import InterRegular from "@fontsource/inter/files/inter-latin-400-normal.woff";
 import InterBold from "@fontsource/inter/files/inter-latin-700-normal.woff";
 import { getCollection } from "astro:content";
@@ -92,16 +92,10 @@ export async function GET(context: APIContext) {
     width: dimensions.width,
   });
 
-  const image = new Resvg(svg, {
-    fitTo: {
-      mode: "width",
-      value: dimensions.width,
-    },
-  }).render();
-
-  return new Response(image.asPng(), {
+  return new Response(svg, {
     headers: {
-      "Content-Type": "image/png",
+      "Content-Type": "image/svg+xml",
+      "Cache-Control": "public, max-age=31536000, immutable",
     },
   });
 }
