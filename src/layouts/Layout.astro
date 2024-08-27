@@ -8,15 +8,16 @@ import Social from "@components/Social.astro";
 import Email from "@components/Email.astro";
 
 
-const twitter = "exylods"; // Twitter username, even though it's privated.
+const twitter = "none"; // Twitter username, even though it's privated.
 
 interface Props {
   title?: string;
   description?: string;
-  ogImage?: {
-    src: string;
-    alt: string;
-  };
+  heroImage?: string;
+  // ogImage?: {
+  //   src: string;
+  //   alt: string;
+  // };
   pubDate?: Date;
   wide?: boolean;
 }
@@ -24,12 +25,20 @@ interface Props {
 const {
   title = defaultMeta.title,
   description = defaultMeta.description,
-  ogImage = defaultMeta.ogImage,
+  heroImage,
+  // ogImage = defaultMeta.ogImage,
   pubDate,
   wide = false,
 } = Astro.props;
 
-const ogImageURL = new URL(ogImage.src, Astro.site).href;
+const ogImageURL = heroImage 
+  ? new URL(heroImage, Astro.site).href 
+  : new URL(defaultMeta.ogImage.src, Astro.site).href;
+
+  const ogImageAlt = heroImage 
+  ? `Hero image for ${title}` 
+  : defaultMeta.ogImage.alt;
+// const ogImageURL = new URL(ogImage.src, Astro.site).href;
 const canonicalURL = new URL(Astro.url).href;
 ---
 
@@ -48,8 +57,9 @@ const canonicalURL = new URL(Astro.url).href;
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
     <meta property="og:image" content={ogImageURL} />
+    <meta property="og:image:alt" content={ogImageAlt} />
     <meta property="og:site_name" content={author} />
-    <meta property="og:image:alt" content={ogImage.alt} />
+    <!-- <meta property="og:image:alt" content={ogImage.alt} /> -->
     <meta property="og:locale" content="en_US" />
     <meta property="twitter:card" content="summary_large_image" />
     <meta property="twitter:url" content={canonicalURL} />

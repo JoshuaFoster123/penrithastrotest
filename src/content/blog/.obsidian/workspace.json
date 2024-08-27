@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "calcium-channel-blocker-toxicity.mdx",
+                "file": "a-case-of-progressive-weakness.mdx",
                 "mode": "source",
                 "source": false
               }
@@ -85,7 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "calcium-channel-blocker-toxicity.mdx",
+                "file": "a-case-of-progressive-weakness.mdx",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +102,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "calcium-channel-blocker-toxicity.mdx",
+                "file": "a-case-of-progressive-weakness.mdx",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -125,7 +125,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "calcium-channel-blocker-toxicity.mdx"
+                "file": "a-case-of-progressive-weakness.mdx"
               }
             }
           }
@@ -149,6 +149,7 @@
   },
   "active": "7181bc50dfb9bab6",
   "lastOpenFiles": [
+    "calcium-channel-blocker-toxicity.mdx",
     "Untitled.md"
   ]
 }

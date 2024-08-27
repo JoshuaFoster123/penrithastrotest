@@ -25,15 +25,15 @@ const {
   image,
   imageAlt,
   pubDate,
-  url,
+  // url,
   updatedDate,
   readingTime,
 } = Astro.props;
 
-const ogImage = {
-  src: `/image/${url}.png`,
-  alt: title,
-};
+// const ogImage = {
+//   src: `/image/${url}.png`,
+//   alt: title,
+// };
 
 
 
@@ -51,7 +51,7 @@ const fullUpdatedDate = updatedDate?.toLocaleDateString("en", {
 <Layout
   title={title}
   description={description}
-  ogImage={ogImage}
+  
   pubDate={updatedDate ?? pubDate}
 >
   <header class="flex flex-col mb-8">

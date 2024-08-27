@@ -67,8 +67,8 @@ export async function GET(context: APIContext) {
           tw="w-15 h-15 rounded-full"
         />
         <div tw="flex flex-col ml-4 text-2xl">
-          <span tw="text-zinc-400">Lance Ross</span>
-          <span tw="text-zinc-400">@exylods</span>
+          <span tw="text-zinc-400">Lancedsa Ross</span>
+          <span tw="text-zinc-400">hellos</span>
         </div>
       </div>
     </div>
