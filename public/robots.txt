@@ -4,4 +4,4 @@ Disallow: /_astro/
 User-agent: *
 Allow: /
 
-Sitemap: https://astrozinc.exylons.com/sitemap-index.xml
+Sitemap: https://penrith.education/sitemap-index.xml

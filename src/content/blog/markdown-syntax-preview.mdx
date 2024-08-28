@@ -1,33 +1,38 @@
 ---
 title: Markdown Syntax Preview
 description: "A simple guide to contributing in Markdown"
-pubDate: 2024-06-10
-updatedDate: 2024-06-27
+pubDate: 2024-08-25
+updatedDate: 2024-06-28
 # hero: "~/assets/heros/mdx-seeklogo.png"
 heroImage: "https://img.penrith.education/heros/mdx-seeklogo.png"
-heroAlt: "Stelle and Clara together on Honkai Star Rail"
+heroAlt: "A simple guide to contributing in Markdown"
 ---
 
 import Callout from '@components/MDX/Callout.astro'
 import SpotifyEmbed from '@components/MDX/SpotifyEmbed.astro'
 import YouTubeEmbed from '@components/MDX/YouTubeEmbed.astro'
+import memeCat from "~/assets/heros/memecat.jpg";
+import { Image } from 'astro:assets';
 
 # Table of Contents[^1]
 
-[^1]:  From @nekochan0122
+[^1]:  From @nekochan0122 
+
 
 # Markdown Syntax
 
 ## Paragraphs
 
+Paragraphs are written content without any other symbols before the text. 
+
 Lorem ipsum dolor sit amet, consectetur adipiscing elit 🤣, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Id donec ultrices tincidunt arcu non sodales neque sodales. Adipiscing diam donec adipiscing tristique risus nec feugiat in.
 
 ## Line Break
 
-> This is an auto line break
+Line breaks can be helpful when you want to break a paragraph onto a new line. You can use the `<br />` symbol to acheive this.
 
-Lorem ipsum dolor sit amet,
-consectetur adipiscing elit 🤣,
+Lorem ipsum dolor sit amet,`<br />`<br /> 
+consectetur adipiscing elit 🤣,`<br />` `<br />`<br /><br />
 sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
 Id donec ultrices tincidunt arcu non sodales neque sodales.
 Adipiscing diam donec adipiscing tristique risus nec feugiat in.
@@ -35,18 +40,43 @@ Adipiscing diam donec adipiscing tristique risus nec feugiat in.
 ## Emphasis
 
 ### Bold
-
-I Love **Astro!**
+Bold text is denoted using two `*` symbol. For example:
+`**Astro**`
+would be: I Love **Astro!**
 
 ### Italic
 
-I am a _Web Developer_.
+Italics are denoted with `_` symbols on either side of the word.
+
+for example `I am a _Web Developer_.` would be: I am a _Web Developer_.
 
 ### Bold and Italic
 
-Thou **_SHALL_** not touch.
+Italic and bold symbols can be combined.
+
+for example: `Thou **_SHALL_** not touch.` would be: Thou **_SHALL_** not touch.
+
 
 ## Blockquotes
+
+Blockquotes are denoted using the `>` symbol
+
+```md
+> This is a blockquote
+```
+
+> This is a blockquote
+
+you can have a multi level block quote.
+
+```
+> Blockquotes can also be nested...
+>
+> > ...by using additional greater-than signs right next to each other...
+> >
+> > > ...or with spaces between arrows.
+```
+
 
 > Blockquotes can also be nested...
 >
@@ -72,10 +102,6 @@ Thou **_SHALL_** not touch.
 2. Consectetur adipiscing elit
 3. Integer molestie lorem at massa
 
-Start numbering with offset: (doesn't work sadly)
-
-57. foo
-1. bar
 
 ## Code
 
@@ -84,8 +110,26 @@ Start numbering with offset: (doesn't work sadly)
 ### Inline Code
 
 This is an array `[1, 2, 3]` of numbers 1 through 3.
+or can be used to emphasise a `point in text`
 
 ### Code Block
+
+a code block can be used to highlight a large amount of information:
+
+```
+you create a code block by using two sets of ``` backticks. 
+
+for example: 
+
+\```
+This is a highligthed code block - 
+you dont need to use the '\' infront of the back ticks.
+\```
+
+
+```
+
+## Standard code block
 
 ```
 Sample text here...
@@ -119,9 +163,13 @@ export default function Counter() {
 
 ## Horizontal Rules
 
+A horizontal rule is denoted using 3 dashes like `---`
+
 ---
 
 ## Link
+links can be used directly in markdown or mdx like: `[youtube](https://youtube.com)`
+
 
 [YouTube](https://youtube.com)
 
@@ -135,15 +183,16 @@ export default function Counter() {
 
 ## Image
 
-Image compressed by `sharp`
+All images can be directly used in the document with the `<Image>` tag. 
 
-Local image
+all images require a source, alternate text, width, and height. <br/>
+The width and height will be set at `width = 1200` and `height = 630` so try to use high resolution pictures for the best result.
 
-![Stelle and Clara together on Honkai Star Rail](~/assets/heros/memecat.jpg)
+an example image embed: 
 
-Remote image
+`<Image src="https://uploads.dailydot.com/2018/10/olli-the-polite-cat.jpg?auto=compress&fm=pjpg" alt="memecat.png" width="1200" height="630" />`
 
-![March 7th from Honkai Star Rail](https://uploads.dailydot.com/2018/10/olli-the-polite-cat.jpg?auto=compress&fm=pjpg)
+<Image src="https://uploads.dailydot.com/2018/10/olli-the-polite-cat.jpg?auto=compress&fm=pjpg" alt="memecat.png" width="1200" height="630" />
 
 ## Escaping Characters
 
@@ -168,10 +217,14 @@ A note[^2]
 | Content Cell 3 | Content Cell 3 |
 | Content Cell 4 | Content Cell 4 |
 
+the easiest way to make a table is using an online table generator.
+for example: https://www.tablesgenerator.com/markdown_tables
+
 ### Tasklist
 
 - [ ] to do
 - [x] done
+
 ---
 
 {/* # Audio Player
@@ -195,11 +248,15 @@ Might be loud on your device. Please adjust your device volume before playing. *
 
 # Spotify Embed
 
-I do not own these songs! I just picked these song to show the Spotify embed code (from Spotify AB) as a component on my website. Songs are from Connor Price (he's a great artist!).
+You can use spotify embeds to show off a useful podcast.
 
-<SpotifyEmbed size="small" link="https://open.spotify.com/track/5PspcXQtSiTDRPa8V5PHYf"/>
-<SpotifyEmbed size="large" link="https://open.spotify.com/track/5PspcXQtSiTDRPa8V5PHYf"/>
-<SpotifyEmbed size="large" link="https://open.spotify.com/artist/5zixe6AbgXPqt4c1uSl94L"/>
+There is an option to display as `small` or `large`. You can even display a playlist.
+
+
+<SpotifyEmbed size="small" link="https://open.spotify.com/episode/61ApSCbk36xghEYChMRHXf?si=4a85f1860f5a4780"/>
+<SpotifyEmbed size="large" link="https://open.spotify.com/episode/2MKgdnHa9xepTemzWgepdn?si=4da750ae26a14c8a"/>
+<SpotifyEmbed size="large" link="https://open.spotify.com/artist/1GLtl8uqKmnyCWxHmw9tL4?si=StXCGXkbRKKctf-QarDYvQ"/>
+
 
 # YouTube Embed
 
