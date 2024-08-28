@@ -2,6 +2,7 @@ export const author = "Joshua Foster";
 
 export const defaultMeta = {
   title: "Penrith Education",
+  author: "Joshua Foster",
   description: "A collaborative hub for all things education.",
   ogImage: {
     src: "https://img.penrith.education/bannerPenrith.png",

@@ -1,16 +1,16 @@
 ---
 export const prerender = true;
-import BlogLayout from "@layouts/BlogLayout.astro";
+import BlogLayout from "@layouts/ecgBlogLayout.astro";
 import { type CollectionEntry, getCollection } from "astro:content";
 
 export async function getStaticPaths() {
-  const posts = await getCollection("blog");
+  const posts = await getCollection("ecg-library");
   return posts.map((post) => ({
     params: { slug: post.slug },
     props: post,
   }));
 }
-type Props = CollectionEntry<"blog">;
+type Props = CollectionEntry<"ecg-library">;
 
 const post = Astro.props;
 const frontmatter = post.data;
@@ -29,6 +29,7 @@ const { Content, remarkPluginFrontmatter } = await post.render();
   heroImage={frontmatter.heroImage}
   author={frontmatter.author}
   authorImage={frontmatter.authorImg}
+  tags={frontmatter.tags}
 >
   <Content />
 </BlogLayout>

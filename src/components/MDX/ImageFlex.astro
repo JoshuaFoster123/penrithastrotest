@@ -1,0 +1,19 @@
+---
+import { Image } from "astro:assets";
+
+const { src, srcRight, width, height, alt, caption} = Astro.props;
+---
+
+
+<div class="flex justify-center items-center space-x-4">
+    <div class="relative">
+    <figure class="flex flex-col items-center">
+    <div class="flex space-x-4 md:space-x-12 lg:space-x-18">
+    {<Image src={src} alt={alt} width={width} height={height} />}
+    
+    {<Image src={srcRight} alt={alt} width={width} height={height} />} 
+    </div>
+    {<figcaption class="mt-2 flex-center">{caption}</figcaption>}
+    </figure>
+    </div>
+    </div>

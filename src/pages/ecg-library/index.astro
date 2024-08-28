@@ -1,0 +1,44 @@
+---
+import Layout from "@layouts/Layout.astro";
+import Header from "@components/Header.astro";
+import { getCollection } from "astro:content";
+import EcgBlog from "@components/ecgBlog.astro";
+import SearchBar from "@components/SearchBar.astro";
+
+const posts = (await getCollection("ecg-library")).sort(
+  (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf(),
+);
+
+const title = "ECG Library";
+const description = "A collection of ECG articles and case studies";
+
+---
+
+<Layout title={title} description={description}>
+  <section class="text-center grid place-items-center">
+    <Header title="ECG Library" />
+    <p class="max-w-prose mb-10 font-normal leading-relaxed">
+      {description}
+    </p>
+  </section>
+  <SearchBar />
+  <h2 class="mt-12 text-2xl font-semibold dark:text-zinc-100 text-zinc-900">
+    Posts
+  </h2>
+  <ul class="mt-6 grid grid-cols-1">
+    {posts.map((p) => <EcgBlog {...p} />)}
+    
+  </ul>
+  <section class="text-center grid place-items-center mt-20">
+    <Header title="Want to give feedback?" />
+    <p class="mt-3 mb-8 max-w-prose leading-relaxed">
+      Have some feedback or noticed something is wrong? <br />Shoot us an email
+      and let us know!
+    </p>
+    <a
+      href="mailto:submissions@penrith.education"
+      class="text-zinc-900 bg-zinc-200/80 hover:bg-zinc-300 font-medium rounded-lg text-base px-5 py-2.5 dark:bg-zinc-900 dark:text-white dark:hover:bg-zinc-800"
+      >Send feedback</a
+    >
+  </section>
+</Layout>

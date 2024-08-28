@@ -20,6 +20,7 @@ interface Props {
   heroImage: string;
   author: string;
   authorImage: string | undefined;
+  tags: string[] | undefined;
 }
 const author = Astro.props.author;
 const authorImage = Astro.props.authorImage;
@@ -34,6 +35,8 @@ const {
   updatedDate,
   readingTime,
   heroImage,
+  // tags,
+
 } = Astro.props;
 
 
@@ -56,6 +59,7 @@ const fullUpdatedDate = updatedDate?.toLocaleDateString("en", {
   heroImage={heroImage}
   pubDate={updatedDate ?? pubDate}
 >
+
   <header class="flex flex-col mb-8">
     <time
       datetime={pubDate.toISOString()}
@@ -67,6 +71,7 @@ const fullUpdatedDate = updatedDate?.toLocaleDateString("en", {
         {readingTime}
       </span>
     </time>
+    
     <h1
       class="text-2xl sm:text-4xl pb-8 font-bold dark:text-zinc-100 text-zinc-950"
     >
@@ -119,6 +124,7 @@ const fullUpdatedDate = updatedDate?.toLocaleDateString("en", {
     class="prose max-w-none dark:prose-invert dark:prose-code:text-zinc-300 dark:prose-a:text-zinc-300 prose-a:text-zinc-600 prose-a:underline prose-a:decoration-zinc-500 hover:prose-a:decoration-zinc-300 prose-a:underline-offset-4 dark:prose-headings:text-zinc-100 prose-img:rounded-lg"
   >
     <slot />
+  
     <hr />
   </article>
   <ul class="mt-4 flex max-sm:flex-col sm:justify-between gap-2 sm:gap-1">
@@ -133,9 +139,9 @@ const fullUpdatedDate = updatedDate?.toLocaleDateString("en", {
     </li>
     <li>
       <a
-        href={`/blog/`}
+        href={`/ecg-library/`}
         class="dark:hover:text-zinc-50 hover:text-zinc-950 transition-colors flex flex-row sm:justify-start sm:flex-row-reverse items-center"
-        ><Icon name="edit" size={16} class="sm:ml-1 max-sm:mr-1" />Return to blog index</a
+        ><Icon name="edit" size={16} class="sm:ml-1 max-sm:mr-1" />Return to ECG Library</a
       >
     </li>
   </ul>
@@ -144,7 +150,10 @@ const fullUpdatedDate = updatedDate?.toLocaleDateString("en", {
     description="Link copied to clipboard."
     idList="toast-share"
   />
+  
+  
   <Pagination />
+ 
 </Layout>
 <script is:inline async>
   document.getElementById("copy").addEventListener("click", function () {
