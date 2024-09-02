@@ -1,4 +1,4 @@
-# Testing branch
+# Site files
 
-A testing branch for blog stlye layout
+A respoitory of site files
  

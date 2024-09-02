@@ -22,7 +22,11 @@ export const navigation = [
   {
     href: "/ecg-library/",
     text: "ECG Library"
-  }
+  },
+{
+  href: "/useful-resources/",
+  text: "Resources"
+}
   // {
   //   href: "/rss.xml",
   //   text: "RSS",
