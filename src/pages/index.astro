@@ -4,18 +4,21 @@ import Header from "@components/Header.astro";
 import { getCollection } from "astro:content";
 import Blog from "@components/Blog.astro";
 import { Image } from "astro:assets";
-import penrithHero from "../assets/heros/heroPenrith.jpg";
+// import penrithHero from "../assets/heros/heroPenrith.jpg";
 const posts = (await getCollection("blog")).sort(
   (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf(),
 );
 
 const imageAlt = "Penrith Education";
+
+
+
 ---
 
 
 <Layout>
   <head>
-    <link rel="preload" as="image" href={penrithHero.src} />
+    <!-- <link rel="preload" as="image" href="https://imagedelivery.net/Q8suFluVPttU0szEv7zgXw/fb21d402-7550-4692-1479-eedea7961c00/public" /> -->
   </head>
   <section class="text-center">
     <div class="grid place-items-center">
@@ -29,13 +32,13 @@ const imageAlt = "Penrith Education";
   </section>
   
   <Image
-  src={penrithHero}
+  src="https://imagedelivery.net/Q8suFluVPttU0szEv7zgXw/fb21d402-7550-4692-1479-eedea7961c00/public"
   alt={imageAlt}
   loading="eager"
   class="rounded-lg mt-6" 
-  widths={[400, 800, 1200]}
-  sizes="(max-width: 800px) 100vw, 1200px"
-  format="webp"
+  width={1366}
+  height={768}
+  
 />
 
   <section>

@@ -64,7 +64,8 @@ export default defineConfig({
   image: {
     remotePatterns: [{ protocol: "https" }],
     // service: passthroughImageService(),
-    service: sharpImageService(),
+    // service: sharpImageService(),
+    service: { entrypoint: 'astro/assets/services/sharp' },
   },
 });
 
