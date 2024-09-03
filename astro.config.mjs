@@ -63,7 +63,8 @@ export default defineConfig({
   }),
   image: {
     remotePatterns: [{ protocol: "https" }],
-    service: passthroughImageService(),
+    // service: passthroughImageService(),
+    service: sharpImageService(),
   },
 });
 
