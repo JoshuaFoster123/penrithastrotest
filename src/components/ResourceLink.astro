@@ -1,0 +1,13 @@
+---
+interface Props {
+    link: string;
+    title: string   
+}
+const {link, title} = Astro.props
+---
+
+<a href={link} class="block p-6 bg-white border border-slate-200 rounded-lg shadow-md hover:bg-slate-100 dark:bg-zinc-950 dark:border-slate-800 dark:hover:bg-zinc-800 w-full sm:w-[calc(50%-1rem)] lg:w-[calc(25%-1rem)] flex-grow"
+            target="_blank">
+              <h5 class="mb-2 text-2xl font-bold tracking-tight text-slate-900 dark:text-white">{title}</h5>
+              <p class="font-normal text-zinc-700 dark:text-slate-400"><slot/></p>
+            </a>
