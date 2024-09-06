@@ -17,16 +17,26 @@ import ImageFlex from '@components/MDX/ImageFlex.astro'
 # What is Wellens syndrome?
 
 
-Wellens syndrome is a clinical syndrome characterised by biphasic or deeply inverted T-waves in V2-V3 (may extend from V1-V6), in the clinical context of recent chest pain that has now **resolved**. This is very specific for critical Left Anterior Decending artery stenosis. Wellens syndrome is a pattern seen in a pain free state and may be obscured during episodes of chest pain.
+Wellens syndrome is a clinical syndrome characterised by biphasic or deeply inverted T-waves in V2-V3 (may extend from V1-V6), in the clinical context of recent chest pain that has now **resolved**. This is very specific for critical Left Anterior Descending artery stenosis. Wellens syndrome is a pattern seen in a pain free state and may be obscured during episodes of chest pain.
 
 # What causes Wellens syndrome?
 
-Wellens is a reperfusion arrhythmia, meaning that clot lysis has occured and the deeply inverted or biphasic T-waves you see on the ECG indicate reperfusion. This is a significant example of why ECGs are important, even if the patient is pain free. Further it is a key example of why patients should have serial ECGs.
+Wellens is a reperfusion arrhythmia, meaning that clot lysis has occurred and the deeply inverted or biphasic T-waves you see on the ECG indicate reperfusion. This is a significant example of why ECGs are important, even if the patient is pain free. Further it is a key example of why patients should have serial ECGs.
 
 
 <Image format="webp" src="https://www.img.penrith.education/content/wellens.png" alt="Wellens ECG" width="1200" height="630" /> 
 
-This ECG was taken on a male patient who had "epigastric" pain. The job was triaged as a 1C chestpain. The patient had taken his own GTN prior to arrival which had resolved his pain. He had a recent admission in ED for hyperkalaemia, and it was noted he was dicharged with ST-elevation in V1-V3. Not so much elevation anymore! 
+This ECG was taken on a male patient who had "epigastric" pain. The job was triaged as a 1C chest pain. The patient had taken his own GTN prior to arrival which had resolved his pain. He had a recent admission in ED for hyperkalaemia, and it was noted he was discharged with ST-elevation in V1-V3. Not so much elevation any more! 
+
+Running this ECG through an AI model trained to look for OMI, this was the result:
+
+<Image src="https://img.penrith.education/content/QoH-interp.avif" alt="QoH ECG interpretation" width="300" height="630" />
+
+The AI model predicted a high likely hood that the patient was positive for the OMI criteria. Read more about OMI in the [OMI Manifesto](http://hqmeded-ecg.blogspot.com/2018/04/the-omi-manifesto.html) written by Stephen Smith, Pendell Meyers, and Scott Weingart. 
+
+You can see a breakdown of what the algorithm is looking for in this next picture. The highlighted blue areas are what the algorithm sees, and makes it's decision based on. 
+
+<Image src="https://img.penrith.education/content/QoH-Wellens.avif" alt="QoH ECG interpretation" width="1200" height="630" />
 
 # Clinical significance of Wellens syndrome
 

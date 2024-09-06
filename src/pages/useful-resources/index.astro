@@ -1,81 +1,184 @@
 ---
 import Layout from "@layouts/Layout.astro";
 import Header from "@components/Header.astro";
-
 ---
 
 <Layout title="Useful Resources">
-    <section class="text-center grid place-items-center">
-        <Header title="Useful Resources" />
-       
+  <section class="text-center grid place-items-center">
+    <Header title="Useful Resources" />
+  </section>
+  <hr
+    class="h-0.5 mx-auto my-4 bg-zinc-300 border-0 rounded md:my-5 dark:bg-zinc-700"
+  />
+  <section class="text-center grid place-items-center">
+    <h2
+      class="mt-3 mb-5 text-2xl font-semibold dark:text-zinc-100 text-zinc-900"
+    >
+      ECG
+    </h2>
+  </section>
 
-    </section>
-    <hr class=" h-0.5 mx-auto my-4 bg-zinc-300 border-0 rounded md:my-5 dark:bg-zinc-700">
-    <section class="text-center grid place-items-center">
-        <h2 class="mt-3 mb-5 text-2xl font-semibold dark:text-zinc-100 text-zinc-900">
-            ECG
-        </h2>
-    </section>
-        
-        <!-- Web resources -->
-        <h3 class="text-center mt-1 text-lg underline decoration-red-900 font-semibold dark:text-zinc-100 text-zinc-900">Web resources</h3>
+  <!-- Web resources -->
+  <h3
+    class="text-center mt-1 text-lg underline decoration-red-900 font-semibold dark:text-zinc-100 text-zinc-900"
+  >
+    Web resources
+  </h3>
 
-        <section class="flex flex-wrap justify-center gap-4 mt-6 mb-6">
-            <a href="https://litfl.com/ecg-library/" class="block p-6 bg-white border border-slate-200 rounded-lg shadow-md hover:bg-slate-100 dark:bg-zinc-950 dark:border-slate-800 dark:hover:bg-zinc-800 w-full sm:w-[calc(50%-1rem)] lg:w-[calc(25%-1rem)] flex-grow"
-            target="_blank">
-              <h5 class="mb-2 text-2xl font-bold tracking-tight text-slate-900 dark:text-white">LITFL ECG Library</h5>
-              <p class="font-normal text-zinc-700 dark:text-slate-400">ECG library and interpretation. Clinical cases, contextual blog posts and high quality ECG images for download from LITFL ECG Library.</p>
-            </a>
+  <section class="flex flex-wrap justify-center gap-4 mt-6 mb-6">
+    <a
+      href="https://litfl.com/ecg-library/"
+      class="block p-6 bg-white border border-slate-200 rounded-lg shadow-md hover:bg-slate-100 dark:bg-zinc-950 dark:border-slate-800 dark:hover:bg-zinc-800 w-full sm:w-[calc(50%-1rem)] lg:w-[calc(25%-1rem)] flex-grow"
+      target="_blank"
+    >
+      <h5
+        class="mb-2 text-2xl font-bold tracking-tight text-slate-900 dark:text-white"
+      >
+        LITFL ECG Library
+      </h5>
+      <p class="font-normal text-zinc-700 dark:text-slate-400">
+        ECG library and interpretation. Clinical cases, contextual blog posts
+        and high quality ECG images for download from LITFL ECG Library.
+      </p>
+    </a>
 
-            <a href="https://ecg.bidmc.harvard.edu/maven/mavenmain.asp" class="block p-6 bg-white border border-slate-200 rounded-lg shadow-md hover:bg-slate-100 dark:bg-zinc-950 dark:border-slate-800 dark:hover:bg-zinc-800 w-full sm:w-[calc(50%-1rem)] lg:w-[calc(25%-1rem)] flex-grow"
-            target="_blank">
-              <h5 class="mb-2 text-2xl font-bold tracking-tight text-slate-900 dark:text-white">Harvard university Wave-Maven</h5>
-              <p class="font-normal text-slate-700 dark:text-slate-400">Harvard university Wave Maven. A free online ECG resource that allows you to test your ECG knowledge.</p>
-            </a>
+    <a
+      href="https://ecg.bidmc.harvard.edu/maven/mavenmain.asp"
+      class="block p-6 bg-white border border-slate-200 rounded-lg shadow-md hover:bg-slate-100 dark:bg-zinc-950 dark:border-slate-800 dark:hover:bg-zinc-800 w-full sm:w-[calc(50%-1rem)] lg:w-[calc(25%-1rem)] flex-grow"
+      target="_blank"
+    >
+      <h5
+        class="mb-2 text-2xl font-bold tracking-tight text-slate-900 dark:text-white"
+      >
+        Harvard university Wave-Maven
+      </h5>
+      <p class="font-normal text-slate-700 dark:text-slate-400">
+        Harvard university Wave Maven. A free online ECG resource that allows
+        you to test your ECG knowledge.
+      </p>
+    </a>
 
-            <a href="http://hqmeded-ecg.blogspot.com/" class="block p-6 bg-white border border-slate-200 rounded-lg shadow-md hover:bg-slate-100 dark:bg-zinc-950 dark:border-slate-800 dark:hover:bg-zinc-800 w-full sm:w-[calc(50%-1rem)] lg:w-[calc(25%-1rem)] flex-grow"
-            target="_blank">
-              <h5 class="mb-2 text-2xl font-bold tracking-tight text-slate-900 dark:text-white"
-              >Dr. Smith's ECG Blog</h5>
-              <p class="font-normal text-slate-700 dark:text-slate-400">A fantastic resource of ECGs from Dr. Smith, a professor of Emergency Medicine at the University of Minnesota.</p>
-            </a>
+    <a
+      href="http://hqmeded-ecg.blogspot.com/"
+      class="block p-6 bg-white border border-slate-200 rounded-lg shadow-md hover:bg-slate-100 dark:bg-zinc-950 dark:border-slate-800 dark:hover:bg-zinc-800 w-full sm:w-[calc(50%-1rem)] lg:w-[calc(25%-1rem)] flex-grow"
+      target="_blank"
+    >
+      <h5
+        class="mb-2 text-2xl font-bold tracking-tight text-slate-900 dark:text-white"
+      >
+        Dr. Smith's ECG Blog
+      </h5>
+      <p class="font-normal text-slate-700 dark:text-slate-400">
+        A fantastic resource of ECGs from Dr. Smith, a professor of Emergency
+        Medicine at the University of Minnesota.
+      </p>
+    </a>
 
-            <a href="https://en.ecgpedia.org/index.php?title=Introduction" class="block p-6 bg-white border border-slate-200 rounded-lg shadow-md hover:bg-slate-100 dark:bg-zinc-950 dark:border-slate-800 dark:hover:bg-zinc-800 w-full sm:w-[calc(50%-1rem)] lg:w-[calc(25%-1rem)] flex-grow"
-            target="_blank">
-              <h5 class="mb-2 text-2xl font-bold tracking-tight text-slate-900 dark:text-white">ECGpedia</h5>
-              <p class="font-normal text-slate-700 dark:text-slate-400">A wikipedia style website for ECGs. A valuable and content rich resource.</p>
-            </a>
-          </section>
+    <a
+      href="https://en.ecgpedia.org/index.php?title=Introduction"
+      class="block p-6 bg-white border border-slate-200 rounded-lg shadow-md hover:bg-slate-100 dark:bg-zinc-950 dark:border-slate-800 dark:hover:bg-zinc-800 w-full sm:w-[calc(50%-1rem)] lg:w-[calc(25%-1rem)] flex-grow"
+      target="_blank"
+    >
+      <h5
+        class="mb-2 text-2xl font-bold tracking-tight text-slate-900 dark:text-white"
+      >
+        ECGpedia
+      </h5>
+      <p class="font-normal text-slate-700 dark:text-slate-400">
+        A wikipedia style website for ECGs. A valuable and content rich
+        resource.
+      </p>
+    </a>
+  </section>
 
-          <!-- Books -->
-          <h3 class="text-center mt-1 text-lg underline decoration-blue-700 font-semibold dark:text-zinc-100 text-zinc-900">Books</h3>
+  <!-- Books -->
+  <h3
+    class="text-center mt-1 text-lg underline decoration-blue-700 font-semibold dark:text-zinc-100 text-zinc-900"
+  >
+    Books
+  </h3>
 
-          <section class="flex flex-wrap justify-center gap-4 mt-6 mb-6">
+  <section class="flex flex-wrap justify-center gap-4 mt-6 mb-6">
+    <a
+      href="https://dr-notes.com/the-only-ekg-book-youll-ever-need-9th-edition-pdf-2az"
+      class="block p-6 bg-white border border-slate-200 rounded-lg shadow-md hover:bg-slate-100 dark:bg-zinc-950 dark:border-slate-800 dark:hover:bg-zinc-800 w-full sm:w-[calc(50%-1rem)] lg:w-[calc(25%-1rem)] flex-grow"
+      target="_blank"
+    >
+      <h5
+        class="mb-2 text-2xl font-bold tracking-tight text-slate-900 dark:text-white"
+      >
+        The Only EKG Book You'll Ever Need 9th Edition
+      </h5>
+      <p class="font-normal text-slate-700 dark:text-slate-400">
+        Clear and concise, The Only EKG Book You'll Ever Need has provided quick
+        and accurate discussions on interpreting ECGs.
+      </p>
+    </a>
+    <a
+      href="https://drive.google.com/file/d/1dqDBvDPCwPl6nxfvQVZl-xPwNrzPDdsK/view"
+      class="block p-6 bg-white border border-slate-200 rounded-lg shadow-md hover:bg-slate-100 dark:bg-zinc-950 dark:border-slate-800 dark:hover:bg-zinc-800 w-full sm:w-[calc(50%-1rem)] lg:w-[calc(25%-1rem)] flex-grow"
+      target="_blank"
+    >
+      <h5
+        class="mb-2 text-2xl font-bold tracking-tight text-slate-900 dark:text-white"
+      >
+        Dr. Smith's Book: The ECG in Acute MI
+      </h5>
+      <p class="font-normal text-slate-700 dark:text-slate-400">
+        An evidence based manual of reperfusion therapy. A book for the mastery
+        of the ECG
+      </p>
+    </a>
+  </section>
+  <hr class="h-px my-8 bg-gray-200 border-0 dark:bg-gray-700" />
 
-            <a href="https://dr-notes.com/the-only-ekg-book-youll-ever-need-9th-edition-pdf-2az" class="block p-6 bg-white border border-slate-200 rounded-lg shadow-md hover:bg-slate-100 dark:bg-zinc-950 dark:border-slate-800 dark:hover:bg-zinc-800 w-full sm:w-[calc(50%-1rem)] lg:w-[calc(25%-1rem)] flex-grow"
-            target="_blank">
-              <h5 class="mb-2 text-2xl font-bold tracking-tight text-slate-900 dark:text-white">The Only EKG Book You'll Ever Need 9th Edition</h5>
-              <p class="font-normal text-slate-700 dark:text-slate-400">Clear and concise, The Only EKG Book You'll Ever Need has provided quick and accurate discussions on interpreting ECGs.</p>
-            </a>
-            <a href="https://drive.google.com/file/d/1dqDBvDPCwPl6nxfvQVZl-xPwNrzPDdsK/view" class="block p-6 bg-white border border-slate-200 rounded-lg shadow-md hover:bg-slate-100 dark:bg-zinc-950 dark:border-slate-800 dark:hover:bg-zinc-800 w-full sm:w-[calc(50%-1rem)] lg:w-[calc(25%-1rem)] flex-grow"
-            target="_blank">
-              <h5 class="mb-2 text-2xl font-bold tracking-tight text-slate-900 dark:text-white">Dr. Smith's Book: The ECG in Acute MI</h5>
-              <p class="font-normal text-slate-700 dark:text-slate-400">An evidence based manual of reperfusion therapy. A book for the mastery of the ECG</p>
-            </a> 
+  <h3
+    class="text-center mt-1 text-lg underline decoration-red-900 font-semibold dark:text-zinc-100 text-zinc-900"
+  >
+    FoamED
+  </h3>
 
-            
+  <section class="flex flex-wrap justify-center gap-4 mt-6 mb-6">
+    <a
+      href="https://litfl.com/"
+      class="block p-6 bg-white border border-slate-200 rounded-lg shadow-md hover:bg-slate-100 dark:bg-zinc-950 dark:border-slate-800 dark:hover:bg-zinc-800 w-full sm:w-[calc(50%-1rem)] lg:w-[calc(25%-1rem)] flex-grow"
+      target="_blank"
+    >
+      <h5
+        class="mb-2 text-2xl font-bold tracking-tight text-slate-900 dark:text-white"
+      >
+        LITFL
+      </h5>
+      <p class="font-normal text-slate-700 dark:text-slate-400">
+        Emergency medicine and critical care education blog..
+      </p>
+    </a>
+    <a
+      href="https://emcrit.org/"
+      class="block p-6 bg-white border border-slate-200 rounded-lg shadow-md hover:bg-slate-100 dark:bg-zinc-950 dark:border-slate-800 dark:hover:bg-zinc-800 w-full sm:w-[calc(50%-1rem)] lg:w-[calc(25%-1rem)] flex-grow"
+      target="_blank"
+    >
+      <h5
+        class="mb-2 text-2xl font-bold tracking-tight text-slate-900 dark:text-white"
+      >
+        EMCrit
+      </h5>
+      <p class="font-normal text-slate-700 dark:text-slate-400">
+        We are obsessed with Emergency Department (ED) Critical Care. A blog &
+        podcast for medical education on ED Intensive Care, Trauma, and
+        Resuscitation.
+      </p>
+    </a>
+  </section>
 
-          </section>
-
-    <style>
-
-        a:hover {
-            text-decoration: underline;
-            color: rgb(96, 206, 110);
-        }
-        a {
-            height: 12rem;
-            width: 20rem;
-        }
-    </style>
+  <style>
+    a:hover {
+      text-decoration: underline;
+      color: rgb(96, 206, 110);
+    }
+    a {
+      height: 12rem;
+      width: 20rem;
+    }
+  </style>
 </Layout>
