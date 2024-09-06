@@ -41,6 +41,7 @@
     "wrangler": "^3.72.2"
   },
   "dependencies": {
+    "@astro-community/astro-embed-vimeo": "^0.3.7",
     "@astrojs/cloudflare": "^11.0.4",
     "@astrojs/react": "^3.6.2",
     "@types/react": "^18.3.4",

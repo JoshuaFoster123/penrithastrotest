@@ -12,16 +12,22 @@ authorImg: "https://img.penrith.education/joshuaFoster.jpg"
 import { Picture } from "astro:assets";
 import { Image } from "astro:assets";
 import Callout from "@components/MDX/Callout.astro"
+import HorizontalOr from "@components/MDX/HorizontalOr.astro"
+import { Vimeo } from '@astro-community/astro-embed-vimeo';
 
-# What is ETC02?
+# What is ETC0<sub>2</sub>?
+ 
+End tidal C0<sub>2</sub> is the measurement of the partial pressure of C0<sub>2</sub> gas which is expired during exhalation. The measurement is taken at the end of exhalation in an attempt to measure when the exhaled gas will most likely match the alveolar C0<sub>2</sub> concentration. 
 
-End tidal C02 is the measurement of the partial pressure of C02 gas which is expired during exhalation. The measurement is taken at the end of exhalation in an attempt to measure when the exhaled gas will most likely match the alveolar C02 concentration. 
+Capnometry was first used in World War II to measure atmospheric C0<sub>2</sub> levels. Its first use in medicine was in the 1950 to measure exhaled C0<sub>2</sub> in anaesthetised patients. Capnometry had a more widespread adoption in the 1980's with the development and production of smaller capnometry machines.
 
-The measurement of ETC02 has two parts, the numerical measurement and the waveform. A thorough understanding of both is important. 
+The measurement of ETC0<sub>2</sub> has two parts, the numerical measurement (Capnometry) and the waveform (Capnography). A thorough understanding of both is important. 
 
-# The science behind ETC02
+Metabolic, perfusion, and ventilation status can be reflected in real time through the measurement of ETC0<sub>2</sub>. Highlighting the importance of its use in critically unwell patients. 
 
-C02 is a byproduct of cellular metabolism. Put simply, Cells take in Oxygen and glucose, and create carbon dioxide (C02), water and energy (ATP). C02 is then bound to haemoglobin via as series of reactions and carried via the blood stream to the lungs, where removal from the body occurs through gas exchange with the atmosphere. 
+# The science behind ETC0<sub>2</sub>
+
+C0<sub>2</sub> is a byproduct of cellular metabolism. Put simply, Cells take in Oxygen and glucose, and create carbon dioxide (C0<sub>2</sub>), water and energy (ATP). C0<sub>2</sub> is then bound to haemoglobin via as series of reactions and carried via the blood stream to the lungs, where removal from the body occurs through gas exchange with the atmosphere. 
 
 CO2 plays an important role in acid-base balance. 
 
@@ -30,142 +36,153 @@ The equation below represents Bicarbonate-Carbonic acid buffer system:
 C0<sub>2</sub> + H<sub>2</sub>0 \<--> H<sub>2</sub>C0<sub>3</sub> \<--> H <sup>+</sup> + HC0<sub>3-</sub>
 
 
-When C02 levels are high, there is a rightwards shift of the reaction. This results in an increased amount of H<sup>+</sup> ions released into the bloodstream, lowering blood pH subsequently resulting in acidosis.
+When C0<sub>2</sub> levels are high, there is a rightwards shift of the reaction. This results in an increased amount of H<sup>+</sup> ions released into the bloodstream, lowering blood pH subsequently resulting in acidosis.
 
-How does C02 exchange work in the lungs? <br/>
-Well, gas exchanges occur through gas diffusion. Gasses diffuse from areas of higher concentration to areas of lower concentration, following a concentration gradient. In the pulmonary artery, deoxygenated blood has a partial pressure of carbon dioxide (Pco<sub>2</sub>) of approximately 46 mmHg and a partial pressure of oxygen (P0<sub>2</sub>) is roughly 40 mmHg. This results in Oxygen from the alveolus (p0<sub>2</sub> of ~100 mmHg) to diffuse into the pulmonary artery, and C02 to diffuse into the alveolus (pc0<sub>2</sub> of ~40mmHg) and be expelled into the atmosphere. This is where etc02 measurement occurs.
+How does C0<sub>2</sub> exchange work in the lungs? <br/>
+Well, gas exchanges occur through gas diffusion. Gasses diffuse from areas of higher concentration to areas of lower concentration, following a concentration gradient. In the pulmonary artery, deoxygenated blood has a partial pressure of carbon dioxide (pc0<sub>2</sub>) of approximately 46 mmHg and a partial pressure of oxygen (P0<sub>2</sub>) is roughly 40 mmHg. This results in Oxygen from the alveolus (p0<sub>2</sub> of ~100 mmHg) to diffuse into the pulmonary artery, and C0<sub>2</sub> to diffuse into the alveolus (pc0<sub>2</sub> of ~40mmHg) and be expelled into the atmosphere. This is where etc0<sub>2</sub> measurement occurs.
 
 # What is dead space? Does it matter?
 
-When talking about ETC02, dead space refers to inhaled gases that do not participate in gas exchange. The etc02 measurement is usually 2-5 mmHg lower in etc02 than pac02 - although this can be significantly effected in certain conditions. This can happen for 3 reasons: 
+When talking about ETC0<sub>2</sub>, dead space refers to inhaled gases that do not participate in gas exchange. The etc0<sub>2</sub> measurement is usually 2-5 mmHg lower in etc0<sub>2</sub> than pac0<sub>2</sub> - although this can be significantly effected in certain conditions. This can happen for 3 reasons: 
 
 1. Anatomical dead space
     - Trachea and large bronchi - Gases in these spaces do not participate in gas exchange.
 2. Instrument dead space
     - Breathing circuits, ET tube, Igel
 3. Alveolar dead space 
-    - Dysfunctional alveoli which receive ventilation but don't exchange C02. This is most notable in patients with diseased lungs.
+    - Dysfunctional alveoli which receive ventilation but don't exchange C0<sub>2</sub>. This is most notable in patients with diseased lungs.
 
-What is the correlation between dead space and etc02? Well, simply put, with increasing dead space, especially alveolar or physiological dead space, will represent a difference between etc02 measurements and pac02.
+What is the correlation between dead space and etc0<sub>2</sub>? Well, simply put, with increasing dead space, especially alveolar or physiological dead space, will represent a difference between etc0<sub>2</sub> measurements and pac0<sub>2</sub>.
 
 For example, alveolar dead space may be increased in a patient with a lung dysfunction at the alveolar, vascular or airway level. Pulmonary embolism, pneumonia, aspiration and asthma are all examples of conditions which can significantly increase alveolar or physiological dead space. 
 
 
 <section class="flex flex-col items-center">
-<Picture src="https://img.penrith.education/content/etco2gap.webp" alt="etc02 - pac02 dead space concentration" height={600} width={516} />
+<Picture src="https://img.penrith.education/content/etco2gap.webp" alt="etc0<sub>2</sub> - pac0<sub>2</sub> dead space concentration" height={600} width={516} />
 <p class="mt-0">credit [EMcrit](https://emcrit.org/ibcc/co2/)</p>
 </section>
 
-Dead space is a concept used to theorise the difference between etc02 and Pac0<sub>2</sub>. Increased dead space can lead to low etc02 levels, although this is something we can not measure in the prehospital setting.
+Dead space is a concept used to theorise the difference between etc0<sub>2</sub> and Pac0<sub>2</sub>. Increased dead space can lead to low etc0<sub>2</sub> levels, although this is something we can not measure in the prehospital setting.
 
-Can the theory of dead space be applied in the prehospital setting? Maybe. For example, you have a patient who you suspect has a pulmonary embolism, this would create a alveolar dead space. Some studies suggest an etc02 `>35 mmHg` can almost rule out a PE with a negative predictive value of 95% --> 100%. [1](https://erj.ersjournals.com/content/35/4/723), [2](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6785277/), [3](https://www.sciencedirect.com/science/article/pii/S2531043719302168)
+Can the theory of dead space be applied in the prehospital setting? Maybe. For example, you have a patient who you suspect has a pulmonary embolism, this would create a alveolar dead space. Some studies suggest an etc0<sub>2</sub> `>35 mmHg` can almost rule out a PE with a negative predictive value of 95% --> 100%. [1](https://erj.ersjournals.com/content/35/4/723), [2](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6785277/), [3](https://www.sciencedirect.com/science/article/pii/S2531043719302168)
 
-# Cardiac output and ETC02
+# Cardiac output and ETC0<sub>2</sub>
 
-Does cardiac output affect ETC02? Well, transiently.
+Does cardiac output affect ETC0<sub>2</sub>? Well, transiently.
 
-For example, lets think about etc02 during cardiac arrest. You may have initially low ETC02 levels due to no cardiac output. High quality CPR will drastically increase cardiac output and increase the etc02. If ROSC occurs, then a spike in etc02 may occur. 
+For example, lets think about etc0<sub>2</sub> during cardiac arrest. You may have initially low ETC0<sub>2</sub> levels due to no cardiac output. High quality CPR will drastically increase cardiac output and increase the etc0<sub>2</sub>. If ROSC occurs, then a spike in etc0<sub>2</sub> may occur. 
 
-Another example is during a leg raise during hypotension. This will temporarily increase cardiac output and is a good predictor of patients who will be preload-responsive. If increase in cardiac output occurs, a transient increase in etc02 will occur. 
+Another example is during a leg raise during hypotension. This will temporarily increase cardiac output and is a good predictor of patients who will be preload-responsive. If increase in cardiac output occurs, a transient increase in etc0<sub>2</sub> will occur. 
 
-# Mainstream or Sidestream ETC02 monitoring
+# Mainstream or Sidestream ETC0<sub>2</sub> monitoring
 
-Mainstream ETC02 monitors sit directly above the airway adjunct, inline with the airway circuit. An example of this is the EMMA device. This allows for the expired gass to pass the infrared light path and results in almost immediate reading of ETC02. This allows for fast response times. The main disadvantage of a mainstream device is its difficult/impossible use on spontaneously breathing patients. 
+Mainstream ETC0<sub>2</sub> monitors sit directly above the airway adjunct, inline with the airway circuit. An example of this is the EMMA device. This allows for the expired gass to pass the infrared light path and results in almost immediate reading of ETC0<sub>2</sub>. This allows for fast response times. The main disadvantage of a mainstream device is its difficult/impossible use on spontaneously breathing patients. 
 
-Sidestream ETC02 monitors sit away from the airway circuit. The ETC02 monitoring on the corpuls is a sidestream device. Sidestream monitors take samples of the expired gas through an adjunct in the airway circuit. The corpuls achieves this through the use of a pump. Sidestream devices enable versatility in measurement through a variety of measurement devices, like nasal prongs and circuit attachments. 
+Sidestream ETC0<sub>2</sub> monitors sit away from the airway circuit. The ETC0<sub>2</sub> monitoring on the corpuls is a sidestream device. Sidestream monitors take samples of the expired gas through an adjunct in the airway circuit. The corpuls achieves this through the use of a pump. Sidestream devices enable versatility in measurement through a variety of measurement devices, like nasal prongs and circuit attachments. 
 
-Mainstream and sidestream devices provide quantitative data, as they provide a numerical value for ETC02. 
-
-
-Colourmetric devices are a qualitative device which provides a range of values represented by colours. These devices can be termed C02 detectors, and not monitors. Historically, they were used within ambulance to ensure the presence of C02 post intubation.
+Mainstream and sidestream devices provide quantitative data, as they provide a numerical value for ETC0<sub>2</sub>. 
 
 
-# ETC02 measurements and waveforms
+Colourmetric devices are a qualitative device which provides a range of values represented by colours. These devices can be termed C0<sub>2</sub> detectors, and not monitors. Historically, they were used within ambulance to ensure the presence of C0<sub>2</sub> post intubation. Colourmetric devices are considered mainstream devices, although their use is as a last resort, if all other devices fail.
 
-Assessment of ETC02 is multifaceted. During ETC02 monitoring you receive capnography and a capnometry.
 
-Capnometry measures ETC02 through numerical representation only, where as Capnography is inclusive of numerical measurement and displays a waveform. 
+# ETC0<sub>2</sub> measurements and waveforms
 
-Another crucial aspect of ETC02 monitoring is Capnograph. The capnograph represents a inspiratory, expiratory waveform. 
+Assessment of ETC0<sub>2</sub> is multifaceted. During ETC0<sub>2</sub> monitoring you receive capnography and a capnometry.
 
-Many factors can effect the ETC02 reading and waveform. Below is a graph of common waveforms. 
+Capnometry measures ETC0<sub>2</sub> through numerical representation only, where as Capnography is inclusive of numerical measurement and displays a waveform. 
 
-<Picture src="https://www.img.penrith.education/content/capnography1.avif" alt="etc02 - wave form capnography1" height={630} width={1200} />
+Another crucial aspect of ETC0<sub>2</sub> monitoring is the Capnograph. The capnograph represents a inspiratory, expiratory waveform. 
 
-<Picture src="https://www.img.penrith.education/content/capnography2.avif" alt="etc02 - wave form capnography2" height={630} width={1200} />
+Many factors can effect the ETC0<sub>2</sub> reading and waveform. Below is a graph of common waveforms. 
 
-Some factors that can effect ETC02 readings: 
-1. Low ETC02
-    - Failure of ventilation
-        - Circuit disconnection
-        - Airway obstruction
-        - Bronchospasm
-    - Circulatory Failure
-        - Cardiac arrest
-        - Worsening shock
-    - Increased RV afterload
-        - PE
-        - High PEEP
-    - Hyperventilation
-2. High ETC02
-    - Decreased ventilation
-        - Decreased RR 
-        - Decreased Tidal volume
-    - Increased C02 production
-        - Sepsis
-        - Tourniquet released
-        - ROSC
-        - malignant hyperthermia
-    - Increased inspired C02
-        - Rebreathing
-        - External C02 source
+<Picture src="https://www.img.penrith.education/content/capnography1.avif" alt="etc0<sub>2</sub> - wave form capnography1" height={630} width={1200} />
 
-# Who should receive ETC02 monitoring? How can it help?
+<Picture src="https://www.img.penrith.education/content/capnography2.avif" alt="etc0<sub>2</sub> - wave form capnography2" height={630} width={1200} />
 
-ETC02 can be a useful tool in many scenarios. It provides useful, realtime feedback about a patients respiratory function and status. etco2 is a useful and necessary adjunct to confirming ETT placement. 
+Some factors that can effect ETC0<sub>2</sub> readings: 
 
-Patients who should receive ETC02 monitoring is up to the discretion of the provider. A short list of patients who could benefit from ETC02:
 
-1. Patients receiving parental sedation
-2. Respiratory patients
-    - Asthma 
-    - COPD
-    - APO 
-3. Cardiac arrest
-4. Sepsis
-5. Cardiogenic shock/Low perfusion states
-6. Trauma
-    - Tension pneumo 
-    - Head injury
+<p class="flex justify-center text-2xl sm:text-4xl pb-0 mb-0 font-bold dark:text-red-600 text-red-600">Low ETC0<sub>2</sub></p>
 
-End tidal can be a useful adjunct to treatment. It allows the provider to have another tool to assess respiratory/ventilatory/circulatory status. It is important to understand how to interpret and diagnose reasons for low and high etc02 readings. 
+| Failure of ventilation |   Circulatory failure  | Increase RV afterload |       Other      |
+|:----------------------:|:----------------------:|:---------------------:|:----------------:|
+|  Circuit disconnection |     Cardiac arrest     |           PE          | Hyperventialtion |
+|   Airway obstruction   |     Worsening shock    |       High PEEP       |                  |
+|      Bronchospasm      | Reduced cardiac output |                       |                  |
+|                        |                        |                       |                  |
 
-ETC02 can prove as a beneficial assessment of CPR quality. ETC02 should rise to near normal levels or >30 mmHg with good CPR. Fatigue will show immediate decrease in ETC02 and should be an indicator to swap CPR providers. Inversely, a sharp rise in ETC02 can be an indicator of ROSC. A sharp rise in ETC02 to normal or above normal levels indicates cardiac output. 
 
-An ETC02 of \<10 mmHG or equal to 10 mmHg after 20 mins of ACLS has a positive predictive value of 100% of mortality. Persistently low ETC02 during CPR in intubated patients suggests ROSC is unlikely. ETC02 levels near normal for cardiac arrests up to 60 minutes have show survival to discharge rates of almost 20% in persistent VT/VF arrests.
+<p class="flex justify-center text-2xl sm:text-4xl pb-0 mb-0 font-bold dark:text-red-600 text-red-600">High ETC0<sub>2</sub></p>
 
-ETC02 monitoring can prove useful in the prevention of hyperventilation of patients during post ROSC care. Aim for a ETC02 of 35-45 mmHg.
+|  Decreased ventilation | Increased C0<sub>2</sub> production | Increased inspired C0<sub>2</sub> |
+|:----------------------:|:-----------------------------------:|:---------------------------------:|
+|      Decreased RR      |                Sepsis               |            Rebreathing            |
+| Decreased Tidal volume |          Tourniquet release         |   External C0<sub>2</sub> source  |
+|                        |                 ROSC                |                                   |
+|                        |        Malignant hyperthermia       |                                   |
+|                        |                                     |                                   |
 
-<Callout type="info" title="ETC02's predictive value in Cardiac Arrest">
-    Most studies have show the usefulness of ETC02 levels after 20 mins of CPR:
 
-    1. etc02 \<10 mmHg suggest low likelihood of survival (asystole and etc02 \<10 suggest futility)
-    2. etc02 10-20 mmHg is a grey zone
-    3. etc02 >20 mmHg suggest a higher likelihood of survival
+# Who should receive ETC0<sub>2</sub> monitoring? How can it help?
 
-    **etc02 levels are a guide, with other factors taken into account in the context of cardiac arrest.** 
+ETC0<sub>2</sub> can be a useful tool in many scenarios. It provides useful, realtime feedback about a patients respiratory function and status. etco2 is a useful and necessary adjunct to confirming ETT placement. 
+
+Patients who should receive ETC0<sub>2</sub> monitoring is up to the discretion of the provider. 
+
+A short list of patients who could benefit from ETC0<sub>2</sub>:
+
+
+| Parental sedation | Respiratory |        Trauma       | Low perfusion states |
+|:-----------------:|:-----------:|:-------------------:|:--------------------:|
+|     Droperidol    |    Asthma   |    Head injuries    |          DKA         |
+|     Midazolam     |     COPD    |    Chest injuries   |        Sepsis        |
+|    Morph/Midaz    |     APO     | Multi-system trauma |   Cardiogenic Shock  |
+|                   |             |                     |                      |
+
+<Callout type="info" title="Any other patients you can think of?">
+    The table above demonstrates a small cohort of patients who could benefit from ETC0<sub>2</sub> monitoring. 
+
+    Can you think of any other patients who could benefit from ETC0<sub>2</sub> monitoring?
 </Callout>
 
-The use of ETC02 in respiratory patients can show efficacy of treatment or be a predictor of deterioration. To note, ETC02 during respiratory/cardiac arrest due to asthma/COPD ETC02 levels can be extremely high (80-100 mmHg). Trying to lower ETC02 in this cohort of patients is not advised, as poorer outcomes are likely. ETC02 can be a guide to efficacy of drug therapies.
+End tidal can be a useful adjunct to treatment. It allows the provider to have another tool to assess respiratory/ventilatory/circulatory status. It is important to understand how to interpret and diagnose reasons for low and high etc0<sub>2</sub> readings. 
 
-Use in trauma and head injury can be beneficial. For example, patients with chest/head trauma. Chest injuries can lead to tension pneumothorax and head injuries can have a direct effect on respiratory status. ETC02 can play a role in respiratory/airway management and monitoring in these patients. 
+Here is a short video from [LITFL](https://litfl.com/capnography-in-cardiac-arrest/) on the use of ETC0<sub>2</sub> in cardiac arrest
 
-ETC02 can prove to be a useful adjunct in many scenarios. It provides direct and almost instantaneous feedback to the provider. It can be a great indicator of how well your treatment is working, and an early sign in changes in a patients respiratory/haemodynamic status if used appropriately and well.
+<Vimeo id="https://vimeo.com/57399615" poster="https://img.penrith.education/content/96minsofcpr.avif"/>
+
+
+ETC0<sub>2</sub> can prove as a beneficial assessment of CPR quality. ETC0<sub>2</sub> should rise to near normal levels or >30 mmHg with good CPR. Fatigue will show immediate decrease in ETC0<sub>2</sub> and should be an indicator to swap CPR providers. Inversely, a sharp rise in ETC0<sub>2</sub> can be an indicator of ROSC. A sharp rise in ETC0<sub>2</sub> to normal or above normal levels indicates cardiac output. 
+
+An ETC0<sub>2</sub> of \<10 mmHG or equal to 10 mmHg after 20 mins of ACLS has a positive predictive value of 100% of mortality. Persistently low ETC0<sub>2</sub> during CPR in intubated patients suggests ROSC is unlikely. ETC0<sub>2</sub> levels near normal for cardiac arrests up to 60 minutes have show survival to discharge rates of almost 20% in persistent VT/VF arrests.
+
+ETC0<sub>2</sub> monitoring can prove useful in the prevention of hyperventilation of patients during post ROSC care. Aim for a ETC0<sub>2</sub> of 35-45 mmHg.
+
+<Callout type="criteria" title="ETC02's predictive value in Cardiac Arrest">
+    Most studies have show the usefulness of ETC0<sub>2</sub> levels after 20 mins of CPR:
+
+    1. etc0<sub>2</sub> \<10 mmHg suggest low likelihood of survival (asystole and etc0<sub>2</sub> \<10 suggest futility)
+    2. etc0<sub>2</sub> 10-20 mmHg is a grey zone
+    3. etc0<sub>2</sub> >20 mmHg suggest a higher likelihood of survival
+
+    **etc0<sub>2</sub> levels are a guide, with other factors taken into account in the context of cardiac arrest.** 
+</Callout>
+
+The use of ETC0<sub>2</sub> in respiratory patients can show efficacy of treatment or be a predictor of deterioration. To note, ETC0<sub>2</sub> during respiratory/cardiac arrest due to asthma/COPD ETC0<sub>2</sub> levels can be extremely high (80-100 mmHg). Trying to lower ETC0<sub>2</sub> in this cohort of patients is not advised, as poorer outcomes are likely. ETC0<sub>2</sub> can be a guide to efficacy of drug therapies.
+
+Use in trauma and head injury can be beneficial. For example, patients with chest/head trauma. Chest injuries can lead to tension pneumothorax and head injuries can have a direct effect on respiratory status. ETC0<sub>2</sub> can play a role in respiratory/airway management and monitoring in these patients. 
+
+Use in a range of patients presenting with metabolic disorders can prove useful. Take for example, you have a patient you suspect has DKA. They're hyperglycemic, present with abdominal pain, nausea, vomiting. ETC0<sub>2</sub> can be a useful tool to help affirm diagnosis. Literature suggests that an ETC0<sub>2</sub> >26 mmHg can effectively rule out the presence of DKA. 
+
+Capnography can be used to estimate shock intensity. ETC0<sub>2</sub> will be lower in patients in a significantly volume-shocked stated. This is due to reduced cardiac output, and less flow through the pulmonary circuit. A reduction in pulmonary gas exchange occurs and a reduction in ETC0<sub>2</sub> occurs. ETC0<sub>2</sub> can prove to be a useful tool to help evaluate success of treatment and severity of shocked patients. 
+
+ETC0<sub>2</sub> can prove to be a useful adjunct in many scenarios. It provides direct and almost instantaneous feedback to the provider. It can be a great indicator of how well your treatment is working, and an early sign of changes in a patients respiratory/haemodynamic/metabolic status if used appropriately and well. Hopefully you will feel more comfortable using ETC0<sub>2</sub> as an adjunct to your treatment.
 
 
 # References
 
-1. [EMCrit - C02](https://emcrit.org/ibcc/co2/)
+1. [EMCrit - C0<sub>2</sub>](https://emcrit.org/ibcc/co2/)
 2. [End tidal carbon dioxide monitoring in prehospital and retrieval medicine: a review](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2564226/)
 3. [American Nurse - Understanding end-tidal CO2 monitoring](https://www.myamericannurse.com/understanding-end-tidal-co2-monitoring/)
 4. [Acid-Base Balance - Oregon State University](https://open.oregonstate.education/aandp/chapter/26-4-acid-base-balance/)
@@ -176,3 +193,6 @@ ETC02 can prove to be a useful adjunct in many scenarios. It provides direct and
 9. [The combined use of end-tidal carbon dioxide and alveolar dead space fraction values in the diagnosis of pulmonary embolism](https://www.sciencedirect.com/science/article/pii/S2531043719302168)
 10. [End-tidal CO2 for exclusion of suspected pulmonary embolism: a new partner for Wells?](https://erj.ersjournals.com/content/35/4/723)
 11. [Is Bedside End-Tidal CO2 Measurement a Screening Tool to Exclude Pulmonary Embolism in Emergency Department?](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6785277/)
+12. [ETCO₂: a predictive tool for excluding metabolic disturbances in nonintubated patients ](https://pubmed.ncbi.nlm.nih.gov/20825776/)
+13. [Applications of End-Tidal Carbon Dioxide (ETCO2) Monitoring in Emergency Department; a Narrative Review](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5827051/)
+14. [Capnography as a tool for triaging and diagnosis of diabetic ketoacidosis in the emergency department: A prospective observational study](https://turkjemergmed.com/full-text/846)
