@@ -53,3 +53,11 @@ paste.txt
 
 # Cloudflare specific
 .cloudflare/
+
+# register
+src/pages/register
+src/components/FeedbackForm.tsx
+src/components/RegisterForm.tsx
+src/pages/api/feedback.ts
+
+
