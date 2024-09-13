@@ -3,15 +3,18 @@ import Layout from "@layouts/Layout.astro";
 import Header from "@components/Header.astro";
 import { getCollection } from "astro:content";
 import Blog from "@components/Blog.astro";
+import EcgBlog from "@components/ecgBlog.astro";
 import { Image } from "astro:assets";
-import penrithHero from "../assets/heros/image_1.AVIF";
+import penrithHero from "../assets/heros/image_1.avif";
 const posts = (await getCollection("blog")).sort(
+  (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf(),
+);
+const posts2 = (await getCollection("ecg-library")).sort(
   (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf(),
 );
 
 const imageAlt = "Penrith Education";
 ---
-
 
 <Layout>
   <head>
@@ -25,29 +28,39 @@ const imageAlt = "Penrith Education";
         <!-- By pre-hospital clinicians, for pre-hospital clinicians. -->
       </p>
     </div>
-   
   </section>
-  
+
   <Image
-  src={penrithHero}
-  alt={imageAlt}
-  loading="eager"
-  class="rounded-lg mt-6" 
-  widths={[400, 800, 1200]}
-  sizes="(max-width: 800px) 100vw, 1200px"
-  
-/>
+    src={penrithHero}
+    alt={imageAlt}
+    loading="eager"
+    class="rounded-lg mt-6"
+    widths={[400, 800, 1200]}
+    sizes="(max-width: 800px) 100vw, 1200px"
+  />
 
   <section>
     <h2 class="mt-12 text-2xl font-semibold dark:text-zinc-100 text-zinc-900">
-      Recent Posts
+      Recent Blog Posts
     </h2>
     <ul class="mt-6 grid grid-cols-1">
       {posts.slice(0, 3).map((post) => <Blog {...post} />)}
     </ul>
     <a
       class="inline-block mt-7 dark:hover:text-zinc-50 hover:text-zinc-400 transition-colors"
-      href="/blog/">View all posts &rarr;</a
+      href="/blog/">View all blog posts &rarr;</a
+    >
+  </section>
+  <section>
+    <h2 class="mt-12 text-2xl font-semibold dark:text-zinc-100 text-zinc-900">
+      Recent ECG Library Posts
+    </h2>
+    <ul class="mt-6 grid grid-cols-1">
+      {posts2.slice(0, 3).map((post) => <EcgBlog {...post} />)}
+    </ul>
+    <a
+      class="inline-block mt-7 dark:hover:text-zinc-50 hover:text-zinc-400 transition-colors"
+      href="/ecg-library/">View ECG library posts &rarr;</a
     >
   </section>
 
@@ -63,7 +76,6 @@ const imageAlt = "Penrith Education";
       border-color: rgb(96, 206, 110);
       color: rgb(96, 206, 110);
       text-decoration: none;
-
     }
   </style>
 </Layout>

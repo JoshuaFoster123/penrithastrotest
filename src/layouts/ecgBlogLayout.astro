@@ -36,11 +36,7 @@ const {
   readingTime,
   heroImage,
   // tags,
-
 } = Astro.props;
-
-
-
 
 const fullPubDate = pubDate.toLocaleDateString("en", {
   dateStyle: "full",
@@ -59,7 +55,6 @@ const fullUpdatedDate = updatedDate?.toLocaleDateString("en", {
   heroImage={heroImage}
   pubDate={updatedDate ?? pubDate}
 >
-
   <header class="flex flex-col mb-8">
     <time
       datetime={pubDate.toISOString()}
@@ -71,7 +66,7 @@ const fullUpdatedDate = updatedDate?.toLocaleDateString("en", {
         {readingTime}
       </span>
     </time>
-    
+
     <h1
       class="text-2xl sm:text-4xl pb-8 font-bold dark:text-zinc-100 text-zinc-950"
     >
@@ -79,9 +74,10 @@ const fullUpdatedDate = updatedDate?.toLocaleDateString("en", {
     </h1>
     <div class="flex gap-2 mb-8">
       <div class="aspect-square rounded-full overflow-hidden">
-        
         <Image
-          src={authorImage? authorImage : "https://img.penrith.education/anonymous.jpg"}
+          src={authorImage
+            ? authorImage
+            : "https://img.penrith.education/anonymous.jpg"}
           alt="The author of this blog post"
           loading="eager"
           class="aspect-square w-12 h-12"
@@ -99,7 +95,7 @@ const fullUpdatedDate = updatedDate?.toLocaleDateString("en", {
           >@facebook
         </a>
       </p>
-    </div> 
+    </div>
 
     <!-- Hero image -->
     <Image
@@ -124,7 +120,7 @@ const fullUpdatedDate = updatedDate?.toLocaleDateString("en", {
     class="prose max-w-none dark:prose-invert dark:prose-code:text-zinc-300 dark:prose-a:text-zinc-300 prose-a:text-zinc-600 prose-a:underline prose-a:decoration-zinc-500 hover:prose-a:decoration-zinc-300 prose-a:underline-offset-4 dark:prose-headings:text-zinc-100 prose-img:rounded-lg"
   >
     <slot />
-  
+
     <hr />
   </article>
   <ul class="mt-4 flex max-sm:flex-col sm:justify-between gap-2 sm:gap-1">
@@ -133,7 +129,11 @@ const fullUpdatedDate = updatedDate?.toLocaleDateString("en", {
         id="copy"
         class="dark:hover:text-zinc-50 hover:text-zinc-950 transition-colors flex flex-row items-center"
       >
-        <Icon name="share" size={16} class="mr-1" />
+        <Icon
+          name="share"
+          size={16}
+          class="mr-1"
+        />
         Share this article</button
       >
     </li>
@@ -141,7 +141,11 @@ const fullUpdatedDate = updatedDate?.toLocaleDateString("en", {
       <a
         href={`/ecg-library/`}
         class="dark:hover:text-zinc-50 hover:text-zinc-950 transition-colors flex flex-row sm:justify-start sm:flex-row-reverse items-center"
-        ><Icon name="edit" size={16} class="sm:ml-1 max-sm:mr-1" />Return to ECG Library</a
+        ><Icon
+          name="edit"
+          size={16}
+          class="sm:ml-1 max-sm:mr-1"
+        />Return to ECG Library</a
       >
     </li>
   </ul>
@@ -150,11 +154,16 @@ const fullUpdatedDate = updatedDate?.toLocaleDateString("en", {
     description="Link copied to clipboard."
     idList="toast-share"
   />
-  
-  
+
   <Pagination />
- 
+
+  <style>
+    .footnotes h1 {
+      color: red;
+    }
+  </style>
 </Layout>
+
 <script is:inline async>
   document.getElementById("copy").addEventListener("click", function () {
     let copyText = window.location.href;
@@ -169,9 +178,9 @@ const fullUpdatedDate = updatedDate?.toLocaleDateString("en", {
   });
 </script>
 <script>
-  import mediumZoom from 'medium-zoom';
+  import mediumZoom from "medium-zoom";
 
-  mediumZoom('img', {
+  mediumZoom("img", {
     margin: 16,
     background: "#00000095",
   });

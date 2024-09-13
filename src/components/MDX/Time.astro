@@ -1,0 +1,93 @@
+---
+import { Image } from "astro:assets";
+
+const timelineItems = [
+  {
+    date: "1981 BC to 364 AD",
+    title: "Earliest evidence of atherosclerosis",
+    description:
+      "A study published in the Lancet, looked at whole body CT scans of 137 mummies from four different geographical locations which found evidence in 47/137 mummies (34%) of existing atherosclerosis",
+    image: "https://img.penrith.education/content/mummfiedPlaque.avif",
+
+    alt: "First evidence of atherosclerotic plaque from 4000 years ago",
+  },
+  {
+    date: "Circa 1772",
+    title: "a disorder of the breast marked with strong and peculiar symptoms",
+    description:
+      "William Heberden wrote an articulate article to his fellows at the Royal College of Physicians in London articulating observation of angina pectoris",
+    image: "https://img.penrith.education/WilliamHeberden.avif",
+
+    alt: "William Heberden, 1772, Photograph supplied courtesy of the U.S. National Library of Medicine",
+  },
+  {
+    date: "Circa 1879",
+    title: "Link between coronary thrombosis and MI",
+    description:
+      "The pathologist Ludvig Hekton, the head of the Department of Pathology at the University of Chicago from 1901 to 1935 concluded that myocardial infarction was caused by coronary thrombosis",
+    image: "https://img.penrith.education/Hektoen_L.jpg",
+
+    alt: "Ludvig Hekton, 1879, photograph",
+  },
+  {
+    date: "Circa 1912",
+    title: "MI still considered fatal still no treatment",
+    description:
+      "James Herrick in 1912 established the importance of bed rest and rest and supportive treatment were the only therapy for MI",
+    url: "https://en.wikipedia.org/wiki/Middle_East",
+    image: "https://img.penrith.education/content/James_B._Herrick.jpg",
+    alt: "image2",
+  },
+];
+---
+
+<div class="border-0 border-zinc-400/50 dark:border-zinc-400/25 mb-10 mt-10">
+  <div class="container mx-auto p-4">
+    <div class="overflow-y-auto max-h-[600px]">
+      <div class="relative">
+        <div
+          class="absolute left-1/2 w-0.5 h-full bg-zinc-500/50 dark:bg-zinc-500/50"
+        >
+        </div>
+        <div class="flex flex-col">
+          {
+            timelineItems.map((item) => (
+              <>
+                <div class="grid grid-cols-2 gap-4">
+                  <>
+                    <div class="flex flex-col items-start mb-4">
+                      <Image
+                        src={item.image}
+                        alt={item.alt}
+                        class={
+                          "hover:scale-110 rounded-sm w-52 h-52 object-cover mb-2 ml-5"
+                        }
+                        width={200}
+                        height={300}
+                      />
+                    </div>
+                    <div class="flex flex-col items-start justify-center ml-2 mb-4">
+                      <span class="text-zinc-400 w-4 h-4 text-xl">.</span>
+                      <time class="block underline underline-offset-[2.5px] mb-1 ml-4 text-sm font-normal leading-none text-zinc-400 dark:text-zinc-500">
+                        {item.date}
+                      </time>
+                      <div class="flex flex-col items-center justify-center pl-8 pr-8">
+                        <h3 class="text-lg font-semibold text-zinc-950 dark:text-zinc-50 mb-2">
+                          {item.title}
+                        </h3>
+                        <p class="text-base font-normal text-zinc-500 dark:text-zinc-400 mb-2">
+                          {item.description}
+                        </p>
+                        <a>{item.url}</a>
+                      </div>
+                    </div>
+                  </>
+                </div>
+              </>
+            ))
+          }
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -20,7 +20,6 @@ export const collections = {
   blog: blogCollection,
 };
 
-
 const ecgBlogCollection = defineCollection({
   schema: ({ image }) =>
     z.object({

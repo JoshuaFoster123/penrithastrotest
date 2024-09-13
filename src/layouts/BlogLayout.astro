@@ -7,7 +7,7 @@ import type { ImageMetadata } from "astro";
 // import { author } from "@content/config"; // <-- for author
 import { Icon } from "astro-icon/components";
 import Toast from "@components/Toast.astro";
-import { Picture } from "astro:assets";
+// import { Picture } from "astro:assets";
 
 interface Props {
   title: string;
@@ -21,6 +21,7 @@ interface Props {
   heroImage: string;
   author: string;
   authorImage: string | undefined;
+  tags: string[] | undefined;
 }
 const author = Astro.props.author;
 const authorImage = Astro.props.authorImage;
@@ -36,9 +37,6 @@ const {
   readingTime,
   heroImage,
 } = Astro.props;
-
-
-
 
 const fullPubDate = pubDate.toLocaleDateString("en", {
   dateStyle: "full",
@@ -75,9 +73,10 @@ const fullUpdatedDate = updatedDate?.toLocaleDateString("en", {
     </h1>
     <div class="flex gap-2 mb-8">
       <div class="aspect-square rounded-full overflow-hidden">
-        
         <Image
-          src={authorImage? authorImage : "https://img.penrith.education/anonymous.jpg"}
+          src={authorImage
+            ? authorImage
+            : "https://img.penrith.education/anonymous.jpg"}
           alt="The author of this blog post"
           loading="eager"
           class="aspect-square w-12 h-12"
@@ -95,19 +94,18 @@ const fullUpdatedDate = updatedDate?.toLocaleDateString("en", {
           >@facebook
         </a>
       </p>
-    </div> 
+    </div>
 
-    <Picture 
-    src={heroImage}
-    alt={imageAlt}
-    decoding="async"
-    loading="eager"
-    width={1200}
-    height={630}
-    formats={['avif', 'webp']}
+    <Image
+      src={heroImage}
+      alt={imageAlt}
+      decoding="async"
+      loading="eager"
+      class="rounded-lg"
+      width={1200}
+      height={630}
     />
     <!-- Hero image -->
-
   </header>
   {
     updatedDate && (
@@ -137,7 +135,8 @@ const fullUpdatedDate = updatedDate?.toLocaleDateString("en", {
       <a
         href={`/blog/`}
         class="dark:hover:text-zinc-50 hover:text-zinc-950 transition-colors flex flex-row sm:justify-start sm:flex-row-reverse items-center"
-        ><Icon name="edit" size={16} class="sm:ml-1 max-sm:mr-1" />Return to blog index</a
+        ><Icon name="edit" size={16} class="sm:ml-1 max-sm:mr-1" />Return to
+        blog index</a
       >
     </li>
   </ul>
@@ -162,9 +161,9 @@ const fullUpdatedDate = updatedDate?.toLocaleDateString("en", {
   });
 </script>
 <script>
-  import mediumZoom from 'medium-zoom';
+  import mediumZoom from "medium-zoom";
 
-  mediumZoom('img', {
+  mediumZoom("img", {
     margin: 16,
     background: "#00000095",
   });

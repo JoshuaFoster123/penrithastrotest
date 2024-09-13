@@ -9,63 +9,80 @@ import rehypeSlug from "rehype-slug";
 import rehypeAutolinkHeadings from "rehype-autolink-headings";
 import { remarkReadingTime } from "./remark-reading-time.mjs";
 import react from "@astrojs/react";
-import { passthroughImageService } from 'astro/config';
+import { passthroughImageService } from "astro/config";
 /** @type {import('astro-expressive-code').AstroExpressiveCodeOptions} */
 import cloudflare from "@astrojs/cloudflare";
+import { customFootnotes } from "./customFootnotes.mjs";
 const astroExpressiveCodeOptions = {
-  themes: ["min-dark", "min-light"]
+  themes: ["min-dark", "min-light"],
 };
-
-
 
 // https://astro.build/config
 export default defineConfig({
   markdown: {
+    remarkRehype: {
+      footnoteLabel: "References",
+    },
     remarkPlugins: [remarkReadingTime],
-    rehypePlugins: [rehypeSlug, [rehypeAutolinkHeadings, {
-      behavior: "prepend",
-      content: {
-        type: "text",
-        value: "#"
-      },
-      headingProperties: {
-        className: ["anchor"]
-      },
-      properties: {
-        className: ["anchor-link mr-5"]
-      }
-    }]]
+    rehypePlugins: [
+      rehypeSlug,
+      customFootnotes,
+      [
+        rehypeAutolinkHeadings,
+        {
+          behavior: "prepend",
+          content: {
+            type: "text",
+            value: "#",
+          },
+          headingProperties: {
+            className: ["anchor"],
+          },
+          properties: {
+            className: ["anchor-link mr-5"],
+          },
+        },
+      ],
+    ],
   },
-  integrations: [(await import("astro-compress")).default({
-    CSS: false,
-    SVG: false
-  }), tailwind(), sitemap(), expressiveCode(astroExpressiveCodeOptions), icon(), mdx(), react()],
-  
+  integrations: [
+    (await import("astro-compress")).default({
+      CSS: false,
+      SVG: false,
+    }),
+    tailwind(),
+    sitemap(),
+    expressiveCode(astroExpressiveCodeOptions),
+    icon(),
+    mdx(),
+    react(),
+  ],
+
   site: "https://penrith.education",
   vite: {
     plugins: [rawFonts([".ttf", ".woff"])],
     optimizeDeps: {
-      exclude: ["@resvg/resvg-js"]
+      exclude: ["@resvg/resvg-js"],
     },
     ssr: {
-      noExternal: ["@resvg/resvg-js"]
+      noExternal: ["@resvg/resvg-js"],
     },
     build: {
       rollupOptions: {
-        external: ["@resvg/resvg-js"]
-      }
-    }
+        external: ["@resvg/resvg-js"],
+      },
+    },
   },
   output: "server",
   adapter: cloudflare({
     mode: "directory",
-    functionPerRoute: true
+    functionPerRoute: true,
   }),
   image: {
     remotePatterns: [{ protocol: "https" }],
     // service: passthroughImageService(),
     // service: sharpImageService(),
-    service: { entrypoint: 'astro/assets/services/sharp' },
+    service: { entrypoint: "astro/assets/services/sharp" },
   },
 });
 
@@ -74,13 +91,13 @@ function rawFonts(ext) {
   return {
     name: "vite-plugin-raw-fonts",
     transform(_, id) {
-      if (ext.some(e => id.endsWith(e))) {
+      if (ext.some((e) => id.endsWith(e))) {
         const buffer = readFileSync(id);
         return {
           code: `export default ${JSON.stringify(buffer)}`,
-          map: null
+          map: null,
         };
       }
-    }
+    },
   };
 }
